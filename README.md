@@ -10,3 +10,8 @@ This is a text game heavily based on the game Potato by Oliver Darkshire. I say 
 * The Wizard Council wishes you a good day
 
 ##### i love finding issues with my game while i'm writing the readme
+
+
+## TODOs
+* Going to change wieghts until it works
+* Going to add a function where you can always *try* to remove an orc using a potato, and the difficulty gets easier as you use more potatoes until it passes the `potato_v_orc` value at which it's an auto success, since getting locked in an unwinnable state is still too easy.
