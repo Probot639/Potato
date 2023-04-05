@@ -2,14 +2,16 @@
 import random
 import time
 
+sec = 2.5
+
 name = input('Hello Stranger, what name haveth you?:')
 print("Hello " + name + ", welcome to Potato. \n \n you are a halfling, just trying to exist. \n Meanwhile, the dark "
                         "lord rampages across the world. \n You do not care about this, you are trying to farm "
                         "Potatoes. \n \n Because what could a halfling possibly do about it anyway?")
-diff = input("What difficulty would you like to play on? \n[1]: easy mode \n[2]: medium mode \n[3]: hard mode \n[4]: "
-             "Let the Wizarding Council choose for you\n:")
+diff = input("What difficulty would you like to play on? \n[1]: easy mode \n[2]: medium mode \n[3]: hard mode (the "
+             "game, unmodified) \n[4]: Let the Wizarding Council choose for you\n:")
 
-time.sleep(2.5)
+time.sleep(sec)
 if diff == '1':
     destiny = 0
     potatoes = 7
@@ -25,13 +27,13 @@ elif diff == '2':
     print("You have chosen the medium option. \nYou have potatoes in your garden, but a few bad days can ruin you. "
           "\nGood luck!")
 elif diff == '3':
-    destiny = 2
+    destiny = 0
     potatoes = 0
-    orcs = 2
-    potato_v_orc = 2
-    print("This game is basically all chance. \nEverything is now stacked against you. \nStatistically you can win, "
-          "but you will need to get really lucky. \nThe Wizarding Council wishes you the best, and will pretend to "
-          "care about you should anything happen.")
+    orcs = 0
+    potato_v_orc = 0
+    print("This is the base game, untouched. It is complete chance, meaning you can be put in an unwinnable position "
+          "in the first few rounds. If you win on this, good job, it means you either have some strategy or you just "
+          "are lucky. Either way, that's pretty cool.")
 elif diff == '4':
     destiny = random.randint(0, 5)
     potatoes = random.randint(0, 9)
@@ -72,10 +74,10 @@ def gameplay_loop():
         print("Lets find out where you are on this fine morning!")
     location = random.randint(1, 3)
     dieRoll = random.randint(1, 6)
-    time.sleep(2.5)
+    time.sleep(sec)
     if location == 1:
         print("You are in the Garden!")
-        time.sleep(2.5)
+        time.sleep(sec)
         if dieRoll == 1:
             print("You happily root about all day in your garden. You harvest 1 potato!")
             potatoes += 1
@@ -105,7 +107,7 @@ def gameplay_loop():
             potatoes += 2
     elif location == 2:
         print("You hear a knock at the door...")
-        time.sleep(2.5)
+        time.sleep(sec)
         if dieRoll == 1:
             print("It is a distant cousin. They are after your potatoes. They may snitch on you. Enemies become more "
                   "plentiful.")
@@ -135,7 +137,7 @@ def gameplay_loop():
     elif location == 3:
         print("The world has become a darker, more dangerous place. Orcs are more tenacious, and it will take more "
               "potatoes to remove them from your garden. Good luck...")
-        time.sleep(2.5)
+        time.sleep(sec)
         potato_v_orc += 1
     if (potatoes >= potato_v_orc) & (orcs > 0):
         print("There are", orcs, "Orcs in your garden, and you have", potatoes, "potatoes. Would you like to Hurl",
