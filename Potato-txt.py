@@ -72,10 +72,10 @@ def gameplay_loop():
         print("Lets find out where you are on this morning...")
     elif potatoes > orcs:
         print("Lets find out where you are on this fine morning!")
-    location = random.randint(1, 3)
+    location = random.randint(1, 5)
     dieRoll = random.randint(1, 6)
     time.sleep(sec)
-    if location == 1:
+    if (location == 1) or (location == 2):
         print("You are in the Garden!")
         time.sleep(sec)
         if dieRoll == 1:
@@ -105,7 +105,7 @@ def gameplay_loop():
         elif dieRoll == 6:
             print("You burrow into a bumper crop of potatoes. Do you cry with joy? Possibly.")
             potatoes += 2
-    elif location == 2:
+    elif (location == 3) or (location == 4):
         print("You hear a knock at the door...")
         time.sleep(sec)
         if dieRoll == 1:
@@ -134,7 +134,7 @@ def gameplay_loop():
             print("It's a sack of potatoes from a generous neighbor. You really must remember to pay them a visit one "
                   "of these years.")
             potatoes += 2
-    elif location == 3:
+    elif location == 5:
         print("The world has become a darker, more dangerous place. Orcs are more tenacious, and it will take more "
               "potatoes to remove them from your garden. Good luck...")
         time.sleep(sec)
@@ -179,7 +179,7 @@ def scoreCheck():
         return 1
     elif (destiny < 10) & (orcs < 10) & (potatoes >= 10):
         print("\nYou have enough potatoes that you can go underground and not return to the surface until the danger is"
-              " past. You nestle down into  you burrow and enjoy your well earned rest!")
+              " past. You nestle down into you burrow and enjoy your well earned rest!")
         return 1
 
 
