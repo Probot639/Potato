@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # Potato
 import random
 import time
